@@ -1,7 +1,4 @@
 platform: linux
-inputs:
-    name: sourcecode
-    name: maven-docker-image
 
 outputs:
     name: project-package
