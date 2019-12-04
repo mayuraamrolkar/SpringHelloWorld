@@ -1,0 +1,2 @@
+cp createdjar/*.jar  ./hellojar.jar
+cmd ["java","-jar","/hellojar.jar"]
