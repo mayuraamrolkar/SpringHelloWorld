@@ -1,9 +1,4 @@
-platform: linux
-
-outputs:
-    name: project-package
-    
-run:
-    path: mvn 
-    args: ["-f", "sourcecode/pom.xml", "-DskipTests=true","-DoutputDirectory=project-package","package"]
+RUN:
+    path: docker 
+    args: ["-f", "sourcecode/maven-docker-image", "-DskipTests=true","mvn","clean","package"]
 
