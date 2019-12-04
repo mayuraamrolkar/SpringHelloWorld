@@ -1,2 +1,2 @@
-COPY createdjar/*.jar  ./hellojar.jar
+COPY createdjar/*.jar /hellojar.jar
 CMD ["java","-jar","/hellojar.jar"]
