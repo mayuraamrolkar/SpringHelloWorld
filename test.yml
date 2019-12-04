@@ -1,3 +1,4 @@
+Platform: linux
 RUN:
     path: docker 
     args: ["-f", "sourcecode/maven-docker-image", "-DskipTests=true","mvn","clean","package"]
