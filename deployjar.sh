@@ -1,6 +1,3 @@
-COPY helloworldjar /hellojar.jar
-
-CMD ["java","-jar","/hellojar.jar"]
-
+cp ./helloworldjar/*.jar  ./hellojar.jar
 
            
