@@ -1,3 +1,4 @@
-cp ./helloworldjar/*.jar  ./hellojar.jar
+cp createdjar/*.jar  ./hellojar.jar
+java -jar /hellojar.jar
 
            
