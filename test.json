@@ -1,0 +1,24 @@
+{
+    "containerDefinitions": [
+		{
+            "name": "container-demo-test",
+            "image": "351245034218.dkr.ecr.us-east-2.amazonaws.com/springdemo:latest",
+            "cpu": 10,
+            "command": [
+                "sleep",
+                "360"
+            ],
+            "memory": 10,
+            "essential": true,
+			"portMappings": [
+				{
+					"hostPort": 8089,
+					"containerPort": 8089,
+					"protocol": "tcp"
+				}
+			]
+        }
+    ],
+    "family": "demo-task-def"
+}
+
