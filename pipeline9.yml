@@ -1,0 +1,38 @@
+resources:
+- name: sourcecode
+  type: git
+  source: {uri: "https://github.com/mayuraamrolkar/SpringHelloWorld"}
+
+- name: hello-world-docker-image
+  type: docker-image
+  source:
+    aws_access_key_id: AKIAIXQCUXT4JAPPHLYQ 
+    aws_secret_access_key: 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
+    repository: 351245034218.dkr.ecr.us-east-2.amazonaws.com/springdemo
+    tag: latest 
+     
+jobs:    
+  - name: deploy-spring-app
+    public: true
+    plan:
+      - get: hello-world-docker-image
+      - get: sourcecode
+      - task: deploy-aws  
+       
+        params:
+            AWS_ACCESS_KEY_ID: AKIAIXQCUXT4JAPPHLYQ
+            AWS_SECRET_ACCESS_KEY: 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
+            cluster_name: cluster-spring-demo
+           
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+            source:
+                repository: banst/awscli
+                tag: latest
+          inputs:
+            - name: sourcecode
+          run:
+            path: aws
+            args: ["ecs", "register-task-definition", "--cli-input-json", "sourcecode/test.json"]          
