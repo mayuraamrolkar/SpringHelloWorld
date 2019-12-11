@@ -3,12 +3,7 @@
 		{
         		"name": "container-demo-test",
            	 	"image": "351245034218.dkr.ecr.us-east-2.amazonaws.com/springdemo:latest",
-           	 	"cpu": 10,
-           	 	"command": [
-                		"sleep",
-                		"360"
-            		],
-            		"memory": 10,
+            		"memory": 200,
            		"essential": true,
 			"portMappings": [
 				{
